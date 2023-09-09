@@ -22,7 +22,7 @@ api = Api(app)
 def check_if_loggin_in():
     member_endpoints = ['member_index', 'member_article']
     if request.endpoint in member_endpoints and not session['user_id']:
-        return {'error': '401 Unauthorized'}, 401
+        return jsonify({'error': '401 Unauthorized'}), 401
 
 class ClearSession(Resource):
 
